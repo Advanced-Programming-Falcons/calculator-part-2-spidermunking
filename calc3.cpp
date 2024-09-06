@@ -2,6 +2,8 @@
 #include <cmath>
 #include <string>
 #include <sstream>
+#include <cstdlib> 
+#include <ctime> 
 
 using namespace std;
 
@@ -15,14 +17,17 @@ char op = 0;
 int loop = 1;
 string h = "";
 string input;
+int i;
 
 bool check();
 void calc();
+void random();
 
 int main(void){
     while(loop == 1){
         cout << "Please enter a calculation.(opperators ( +, -, *, /, ^, <)\n";
         getline(cin, input);
+        random();
 
         if (check()){
         cout << "Seems to be working\n";
@@ -32,7 +37,6 @@ int main(void){
         cout << num << op << num2 << "=" << ans << endl;
         
     }
-
     return 0;
 }
 
@@ -77,7 +81,22 @@ void calc(){
                 cout << "Yur Dun Bud...\n";
             break;
             default:
-                cout << "doesnt work bru\n";
+                switch(i){
+                    case 1:
+                    cout << "doesnt work bru\n";
+                    break;
+                    case 2:
+                    cout << "C'mon broseph, enter something that will work.\n";
+                    break;
+                    case 3:
+                    cout << "Wow buddy boy, you be playing games with me.\n";
+                    break;
+                }
             break;
         }
+}
+
+void random(){
+    srand((unsigned)time(0)); 
+    i = (rand()%3)+1; 
 }
