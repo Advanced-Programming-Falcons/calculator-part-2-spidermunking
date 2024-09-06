@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -13,66 +14,44 @@ int answer = 0;
 char op = 0;
 int loop = 1;
 string h = "";
+string input;
 
-int calculation(void);
+bool check();
+void calc();
 
 int main(void){
     while(loop == 1){
         cout << "Please enter a calculation.(opperators ( +, -, *, /, ^, <)\n";
-        cin >> num;
-        cin >> op;
-        cin >> num2;
-        switch(op){
-            case '+':
-                ans = num + num2;
-            break;
-            case '-':
-                ans = num - num2;
-            break;
-            case '*':
-                ans = num * num2;
-            break;
-            case '/':
-                ans = num / num2;
-            break;
-            case '^':
-                ans = pow(num,num2);
-            break;
-            case '<':
-                ans = pow(num, (1 / num2));
-            break;
-            case '=':
-                loop = 0;
-                cout << "Yur dun!" << endl;
-            break;
-            case 'h': case 'H':
-                cout << h << endl;
-                op = 0;
-            break;
-        }
+        getline(cin, input);
+
+        if (check()){
+        cout << "Seems to be working\n";
+        } else { cout << "doesnt work bru\n";}
+
+        calc();
         cout << num << op << num2 << "=" << ans << endl;
-
-        /* this next part changes 
-        some variables to integers 
-        for the sake of ease. idk */
-        number = num;
-        number2 = num2;
-        answer = ans;
-
-        h = h + to_string(number)+ op + to_string(number2)+ "=" + to_string(answer)+ "\n";
+        
     }
 
     return 0;
 }
 
-int calculation(){
-/*
-this is where i'm going to use a function to do the math
-for the calculator. 
+bool check(){
+    istringstream iss(input);
+    if (iss >> num >> op >> num2) {
+            cout << op;
+            number = num;
+            number2 = num2;
+            answer = ans;
 
-the following is the code I am planning on using
+            h = h + to_string(number)+ op + to_string(number2)+ "=" + to_string(answer)+ "\n";
+            return true;
+    }
+    return false;
+}
 
-switch(op){
+void calc(){
+    switch(op){
             case '+':
                 ans = num + num2;
             break;
@@ -91,15 +70,14 @@ switch(op){
             case '<':
                 ans = pow(num, (1 / num2));
             break;
-            case '=':
-                loop = 0;
-                cout << "Yur dun!" << endl;
-            break;
             case 'h': case 'H':
                 cout << h << endl;
-                op = 0;
+            break;
+            case '=':
+                cout << "Yur Dun Bud...\n";
+            break;
+            default:
+                cout << "doesnt work bru\n";
             break;
         }
-*/
-    return 0;
 }
