@@ -31,7 +31,6 @@ int main(void){
 
         if (check()){
         cout << "Seems to be working\n";
-        } else { cout << "doesnt work bru\n";}
 
         calc();
         cout << num << op << num2 << "=" << ans << endl;
@@ -83,13 +82,22 @@ void calc(){
             default:
                 switch(i){
                     case 1:
-                    cout << "doesnt work bru\n";
+                    cout << "Doesnt work bru\n";
                     break;
                     case 2:
                     cout << "C'mon broseph, enter something that will work.\n";
                     break;
                     case 3:
                     cout << "Wow buddy boy, you be playing games with me.\n";
+                    break;
+                    case 4:
+                    cout << "DENIED!!"
+                    break;
+                    case 5:
+                    cout << "Francis Cooper!!!"
+                    break;
+                    case 6:
+                    cout << "(╯°□°）╯︵ ┻━┻"
                     break;
                 }
             break;
@@ -98,5 +106,5 @@ void calc(){
 
 void random(){
     srand((unsigned)time(0)); 
-    i = (rand()%3)+1; 
+    i = (rand()%6)+1; 
 }
