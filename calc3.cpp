@@ -25,16 +25,39 @@ void random();
 
 int main(void){
     while(loop == 1){
-        cout << "Please enter a calculation.(opperators ( +, -, *, /, ^, <)\n";
+        cout << "Please enter a calculation.(opperators ( +, -, *, /, ^, <, =)\n";
         getline(cin, input);
         random();
 
         if (check()){
         cout << "Seems to be working\n";
+        }
+        else{
+            switch(i){
+                    case 1:
+                    cout << "Doesnt work bru\n";
+                    break;
+                    case 2:
+                    cout << "C'mon broseph, enter something that will work.\n";
+                    break;
+                    case 3:
+                    cout << "Wow buddy boy, you be playing games with me.\n";
+                    break;
+                    case 4:
+                    cout << "DENIED!!\n";
+                    break;
+                    case 5:
+                    cout << "Francis Cooper!!!\n";
+                    break;
+                    case 6:
+                    cout << "(╯°□°）╯︵ ┻━┻\n";
+                    break;
+                }
+        }
 
         calc();
         cout << num << op << num2 << "=" << ans << endl;
-        
+    
     }
     return 0;
 }
@@ -78,28 +101,8 @@ void calc(){
             break;
             case '=':
                 cout << "Yur Dun Bud...\n";
-            break;
-            default:
-                switch(i){
-                    case 1:
-                    cout << "Doesnt work bru\n";
-                    break;
-                    case 2:
-                    cout << "C'mon broseph, enter something that will work.\n";
-                    break;
-                    case 3:
-                    cout << "Wow buddy boy, you be playing games with me.\n";
-                    break;
-                    case 4:
-                    cout << "DENIED!!"
-                    break;
-                    case 5:
-                    cout << "Francis Cooper!!!"
-                    break;
-                    case 6:
-                    cout << "(╯°□°）╯︵ ┻━┻"
-                    break;
-                }
+                cout << h;
+                loop = 0;
             break;
         }
 }
